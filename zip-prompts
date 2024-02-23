@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Script Name: zip_md_files.sh
+# Purpose: Zips Markdown (.md) files based on specified parameters.
+# Options:
+#   --all: Zip all .md files in the current directory and its subdirectories.
+#   --latest: Zip all .md files newer than the latest 'prompts*.zip' file.
+#   --help: Display script usage and parameter descriptions.
+
+zipname="prompts_$(date +%Y%m%d_%H%M%S).zip"
+
+# Function to get the modification date of the latest "prompts*.zip"
+get_latest_zip_date() {
+    latest_zip=$(find . -maxdepth 1 -type f -name "prompts*.zip" -printf "%T@ %p\n" | sort -r | head -n 1 | awk '{print $2}')
+    if [[ -n "$latest_zip" ]]; then
+        # Return the modification date in a format that find's -newermt option understands
+        echo $(date -r "$latest_zip" '+%Y-%m-%d %H:%M:%S')
+    else
+        # If no "prompts*.zip" file is found, return an empty string
+        echo ""
+    fi
+}
+
+# Function to display help/usage information
+show_help() {
+    echo "Usage: $0 --option"
+    echo "Options:"
+    echo "  --all    : Zip all .md files in the current directory and subdirectories."
+    echo "  --latest : Zip .md files modified after the latest 'prompts*.zip' file."
+    echo "  --help   : Display this help message and exit."
+    echo ""
+    echo "This script zips Markdown (.md) files based on the selected option."
+}
+
+# Main logic to process input parameter
+case "$1" in
+    --all)
+        echo "Zipping all .md files."
+        find . -type f -name "*.md" -print0 | xargs -0 zip "$zipname"
+        ;;
+    --latest)
+        latest_zip_date=$(get_latest_zip_date)
+        if [[ -n "$latest_zip_date" ]]; then
+            echo "Zipping .md files newer than the latest 'prompts*.zip' ($latest_zip_date)."
+            find . -type f -name "*.md" -newermt "$latest_zip_date" -print0 | xargs -0 zip "$zipname"
+        else
+            echo "No 'prompts*.zip' file found. No .md files zipped."
+        fi
+        ;;
+    --help)
+        show_help
+        ;;
+    *)
+        echo "Invalid option: $1. Use --help for usage information."
+        exit 1
+        ;;
+esac

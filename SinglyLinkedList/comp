@@ -1,0 +1,1 @@
+clang -c test.c 2> >(grep error)

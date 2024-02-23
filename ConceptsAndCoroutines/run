@@ -1,0 +1,4 @@
+#!/bin/sh
+
+clang -c -std=c++20 -Wall main.c -o test.exe && ./test.exe
+

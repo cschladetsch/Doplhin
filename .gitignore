@@ -1,0 +1,12 @@
+*.zip
+x64/
+Debug/
+Console*/
+.vs/
+
+
+*.exe
+*.o
+*.obj
+*.pch
+*.icph

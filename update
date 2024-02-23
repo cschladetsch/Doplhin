@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git add prompt.md && git commit -m "$1"
+

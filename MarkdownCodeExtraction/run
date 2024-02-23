@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# (C) 2024 christian.schladetsch@gmail.com.
+# Free to use for any purpose.
+
+input=$1
+base=`basename $input .cpp`
+output="$base.exe"
+log="$base.txt"
+args="${@: 2}"
+cmd="clang -c -std=c++20 -Wall $input -o $output"
+
+header() {
+	echo 
+	echo --------- $1 -------------------------------
+	echo 
+}
+
+header "ENVIRONMENT"
+
+clang -v
+
+header "COMPILING"
+
+$cmd 2>&1 > $log
+
+header "ERRORS"
+
+cat $log | grep -i error
+
+header "OUTPUT"
+
+echo ">>> ./$output $args "
+./$output $args 
+
+header "DONE"
+
