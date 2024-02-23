@@ -1,6 +1,6 @@
-# Doplhin Work
+# Dolphin Work
 
-This repos stores all the work I do for Dolphin. Which is actually 'Google Gemini'.
+This repo stores all the work I do for Dolphin. Which is actually 'Google Gemini'.
 
 ## Prompts
 
