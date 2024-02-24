@@ -1,6 +1,14 @@
-# C++20 - [NAME]
+# C++20 - Meal Planner
+
+Many people wish to limit their daily caloric intake, but find it difficult to do so for various reasons. These include keeping track of calories and als oensuring the diet is not monotonous.
 
 ## Problem Statement
+
+Generate a C++20-conformant program that generates a weekly meal plan. Including _breakfast_, _lunch_, _dinner_ and _dessert_ categoris. The data for the food stuffs is provided by a data file in CSV (Comma Separated Value) file. The generated program aims to ensure a balanced and varied intake of meals while meeting a specific daily caloric target.
+
+The challenge is to generate a command-line tool that generates a meal plan, including all meal categories (breakfast, lunch, dinner, dessert), from a dataset provided by a CSV file. This program aims to ensure a balanced and varied intake of meals while meeting a specified dailing caloric intake.
+
+Create a tool that automates the construction of a nutrituous and varied weekly meal plan. The must algorithmically select from a dataset of food items - eeach with specified caloric values and meal designations - to adhere to dietary constraints. The result is a user-friedly summary of the meal plan for a full week (Monday to Sunday).
 
 ## Requirements
 
