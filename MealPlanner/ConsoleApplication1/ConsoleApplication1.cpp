@@ -3,8 +3,7 @@
 #include <sstream>
 #include <map>
 #include <iostream>
-#include <iostream>
-#include <iostream>
+#include <fstream>
 #include <vector>
 #include <charconv>
 
@@ -29,7 +28,17 @@ public:
         MealTime mealTime;
     };
 
-    bool parseData(string_view fileName) {
+    void parseData(const string & fileName) {
+        ifstream file(fileName);
+        if (!file) {
+            throw runtime_error("Couldn't open data file: " + fileName);
+        }
+        string line;
+        int lineNumber = 0;
+        while (getline(file, line)) {
+            ++lineNumber;
+            parseLine(line, lineNumber);
+        }
     }
 
     void writeMealPlan(int targetCalories) {
@@ -44,11 +53,11 @@ public:
 
 private:
     void distributeRemainingCalories(int remainingCalories) {
-        int numDays = _meals.size();
-        int additionalCaloriesPerDay = ceil(remainingCalories / numDays);
+        auto numDays = _meals.size();
+        auto additionalCaloriesPerDay = ceil(remainingCalories / numDays);
         for (auto& [mealTime, items] : _meals) {
             while (remainingCalories > 0) {
-                int toAdd = min(additionalCaloriesPerDay, remainingCalories);
+                int toAdd = min((int)additionalCaloriesPerDay, (int)remainingCalories);
                 items.push_back(FoodItem{ "Additional Item",toAdd, mealTime });
                 remainingCalories -= toAdd;
             }
@@ -56,7 +65,12 @@ private:
     }
 
     void writePlan() const {
-
+        for (const auto& [mealTime, items] : _meals) {
+            cout << "Meal Time: " << mealNames.at(mealTime) << endl;
+            for (const auto& item : items) {
+                cout << "- " << item.name << "(" << item.calories << " calories)" << endl;
+            }
+        }
     }
 
     void parseLine(const std::string& line, int lineNumber) {
@@ -98,8 +112,11 @@ private:
     int calculateTotalCalories() const {
         int total = 0;
         for (const auto& [mealtTime, items] : _meals) {
-
+            for (const auto& item : items) {
+                total += item.calories;
+            }
         }
+        return total;
     }
 
     map<MealTime, vector<FoodItem>> _meals;
