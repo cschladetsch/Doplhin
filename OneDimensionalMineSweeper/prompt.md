@@ -54,7 +54,7 @@ You win!
 Losing game:
 
 ```bash
-Cell [0..9: 7
+Cell [0..9]?: 7
 Board: 1 1 1 1 1 1 2 * 1 1
 Boom! You lost.
 ```
