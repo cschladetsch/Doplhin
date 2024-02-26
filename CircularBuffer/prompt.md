@@ -1,17 +1,17 @@
 # C++20 - Circular Buffer
 
-Generate a C++20 conformant program that demonstrates tje usage of a cicular buffer.
+Generate a C++20 conformant program that demonstrates the usage of a circular buffer.
 
-## Problem Satement
+## Problem Statement
 
-1. Efficient Design. Implement a circular buffer for memoryu isage performance in streming scenarios.
+1. Efficient Design. Implement a circular buffer for memory usage performance in streaming scenarios.
 1. Template Based. Use templates to enable the circular buffer to use different types of storage.
 1. Concepts. Use `concepts` to trap errors errors at compile time.
 
 ## Requirements
 
-1. **Include methods to add and remove elements**: fro,m the buffer
-1. **Customisable**: Allow users of the date structure designate the underlyinmg container to use, as well as its size, while providing sensible defaults.
+1. **Include methods to add and remove elements**: from the buffer
+1. **Customisable**: Allow users of the date structure designate the underlying container to use, as well as its size, while providing sensible defaults.
  * Include methods for adding to the buffer.
  * Add ability to remove elements from the end of the buffer.
  * The buffer is FIFO: First in, first out.
@@ -22,8 +22,8 @@ Generate a C++20 conformant program that demonstrates tje usage of a cicular buf
 ## Example
 
 ```cpp
-// TODO: incliude required headers
-// TODO: Define the CicularBuffer class
+// TODO: include required headers
+// TODO: Define the CircularBuffer class
 
 template <typename T, std::size_t N>
 class CircularBuffer {
