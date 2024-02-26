@@ -20,7 +20,7 @@ Generate a C++20 program that parses and validates ISBN-13 numbers, designed for
 $ cat 9780747532743 | ./isbn-13
 
 * Valid
-* Book: Harry Potter and the Philosopher\'s Stone - Softcover
+* Book: "Harry Potter and the Philosopher's Stone - Softcover"
 * Author: J.K. Rowling
 * GS1 prefix: 978
 * Registration Group Element: 0
