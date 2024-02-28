@@ -1,9 +1,10 @@
 # C++20 - Logging System
 
-Efficient logging is essential for debugging, monitoring, an analysing software behaviour. The code generation task outlined here requires the development of a logging utility in modern C++20, using `std::source_location::current()` to provide contextual information such as file name, line number, and function name in log messages.
+Efficient logging is essential for debugging, monitoring, and analysing software behaviour. The code generation task outlined here requires the development of a logging utility in modern C++20, using `std::source_location::current()` to provide contextual information such as file name, line number, and function name in log messages.
 
 ## Requirements
 
+1. **Use modern C++20**: Use `std::source_location` namespace.
 1. **Logging Mechanism**: Implement logging using variadic macros to handle messages with different numbers and types of arguments.
 1. **Type Safety**: Ensure type safety with template arguments for logging different data types. Handle both primitive and custom types.
 1. **Severity Levels**: Define macros:
@@ -16,6 +17,7 @@ Efficient logging is essential for debugging, monitoring, an analysing software 
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
+1. All log messages are written to `stderr`.
 
 ## Examples
 
