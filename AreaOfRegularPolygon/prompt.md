@@ -2,7 +2,7 @@
 
 Generate a C++20-compliant program to computer the area of a regular polygon.
 
-The program must take the number of edges, and the legnth of each edge, as program arguments passed to the `main` function.
+The program must take the number of edges, and the length of each edge, as program arguments passed to the `main` function.
 
 The output is the area of the regular polygon provided.
 
@@ -15,22 +15,23 @@ The output is the area of the regular polygon provided.
  * Passing invalid input (i.e., passing a string "12" rather than a number 12)
 1. **Input**:
  * The number of edges is the first argument. This is a positive integer.
- * The length of each edge is provided as a floating-point number. Assume that this number is valid for a single-precision floating-pioint C++ number.
-1. **Precision**: Use doubles for all calclation, and write results using fixed 2 decimal places.
+ * The length of each edge is provided as a floating-point number. Assume that this number is valid for a single-precision floating-point C++ number.
+1. **Precision**: Use doubles for all calculation, and write results using fixed 2 decimal places.
+1. **Examples**: Provide at 3 reasonable examples of usage, including input and output.
 
 ## Provided Framework
 
 When a comment is given starting with the word "TODO" it means that code must be generated at that location.
 
 ```cpp
-// TODO: include all necesssary headers
+// TODO: include all necessary headers
 
 float calcRegularPolygonArea(int edges, float edgeLength); // TODO: implement this function
 
 int main(int argc, char **argv) {
   // TODO: Read values from the command line (the number of edges, and the length of each edge)
 
-  // TODO: Caclulate the area of the regular polygon described by the two input arguments, and passed to the `calcRegularPolygonArea` function.
+  // TODO: Calculate the area of the regular polygon described by the two input arguments, and passed to the `calcRegularPolygonArea` function.
   
   // TODO: trap all input errors, including badly formed integers
 
