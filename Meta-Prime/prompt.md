@@ -1,12 +1,12 @@
 # C++20 - Compile-time Primes
 
-Generate code that uses meta-programming technqiues available to C++20 to define a concept called `Prime` to check if a given positive integer is actually a prime number.
+Generate code that uses meta-programming techniques available to C++20 to define a concept called `Prime` to check if a given positive integer is actually a prime number.
 
 This must all all occur at compile-time.
 
 ## Requirements
 
-1. **Define a Concept for a Prime Number**: Create a concept called `Prime`. This concept must ensuir that a gien number is greater than 1, and that the modulus of the number is itself or 1. 
+1. **Define a Concept for a Prime Number**: Create a concept called `Prime`. This concept must ensure that a given number is greater than 1, and that the modulus of the number is itself or 1. 
  * A prime number is divisible by itself and 1. 1 is not a prime number.
  * It is crucial that the test is performed entirely in compile-time.
  * Provide all concepts, equally distributed as if they were runtime functions.
