@@ -26,6 +26,7 @@ $ ./sum_of_integers 100
 
 ## Notes
 
+* Perform the operation as efficiently as possible.
 * The solution must adhere to modern C++20 standards and must not use external libraries.
 * Ensure the program is robust and can handle various edge cases.
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
