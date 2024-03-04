@@ -4,7 +4,7 @@
 
 There is abundant confusion about how to deal with date-time stamps.
 
-The generated program allows for conversion of a datetime from Coordinated Universal Time (UTC) to its corrsponding local time. The input can in either UTC FORMAT oor in a human-readable format.
+The generated program allows for conversion of a datetime from Coordinated Universal Time (UTC) to its corresponding local time. The input can in either UTC FORMAT or in a human-readable format.
 
 The output is always formal [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time).
 
@@ -26,7 +26,7 @@ The output is always formal [UTC](https://en.wikipedia.org/wiki/Coordinated_Univ
   * Date represented by ordinal number number followed by "st", "nd", "rd", "th". For example `7th`
   * Year represented by a 4-digit number.
   * Time represented using 12-hr clock time followed by 'AM' or 'PM'.
-  * Timezone specified after the time compoentn and separated by whitespace. For example: "EST" or "PST" or "AEST".
+  * Time zone specified after the time component and separated by whitespace. For example: "EST" or "PST" or "AEST".
   * The program will correctly deal with daylight savings based on local time zone.
 
 ## Sample Usage
