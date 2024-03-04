@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Effecient inventory manamgenet is crucial for gocery (and other!) stores. The code generation task requirements the creation of a user-friendly, command-line inventory management system written in modern C++20 to streamline some basic inventory control tasks.
+Efficient inventory mana genet is crucial for grocery (and other!) stores. The code generation task requirements the creation of a user-friendly, command-line inventory management system written in modern C++20 to streamline some basic inventory control tasks.
 
 ## Requirements
 
@@ -10,6 +10,7 @@ Effecient inventory manamgenet is crucial for gocery (and other!) stores. The co
  * `name` (string): Name of the product
  * `quantity` (int): The number of items in stock.
  * `pricePerUnit` (double): Price of a single unit of the product.
+1. **Inventory**: Define an `Inventory` class that can be used to manipulate the inventory. This includes supporting adding new items, getting the quantity a given item in stock, and calculating the  total stock value.
 1. **Command-Line Interface**: Add the following commands:
  * `--add-product`: Prompts the user to add add a new product type, including name, price, and quantity.
  * `--update-quantity`: Update the count of the product in stock.
@@ -23,7 +24,7 @@ Effecient inventory manamgenet is crucial for gocery (and other!) stores. The co
  * Example: The first column is the name of the product surrounded by double quotes. The second item is the price-per-unit. The final column is the number of items in stock. For Example:
  ```
  "Apple",0.5,50
- "Tomatoe",1.1,20
+ "Tomato",1.1,20
  ```
 
 ## Sample
@@ -31,7 +32,7 @@ Effecient inventory manamgenet is crucial for gocery (and other!) stores. The co
 ```bash
 $ cat inventory.csv
 "Apple",0.5,50
-"Tomatoe",1.1,20
+"Tomato",1.1,20
 $ ./inventory --add-product
 Name: Pineapple
 Cost: 2.2
@@ -51,5 +52,3 @@ $ ./inventory --total-value
 * Ensure the program is robust and can handle various edge cases.
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
 * Provide clear and informative error messages in case of any issues encountered during execution.
-
-
