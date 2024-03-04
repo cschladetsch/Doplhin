@@ -21,7 +21,7 @@ Efficient inventory mana genet is crucial for grocery (and other!) stores. The c
 1. **Data Persistence**:
  * Assume a local file called "inventory.csv" that is used as the data storage for the inventory.
  * Do not provide headers in the CSV  file.
- * Example: The first column is the name of the product surrounded by double quotes. The second item is the price-per-unit. The final column is the number of items in stock. For Example:
+ * Example: The first column is the name of the product surrounded by double quotes. The second item is the price-per-unit, as a floating point number. The final column is the number of items in stock as an integer. For Example:
  ```
  "Apple",0.5,50
  "Tomato",1.1,20
