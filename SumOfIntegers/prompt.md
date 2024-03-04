@@ -2,8 +2,7 @@
 
 ## Overview
 
-Write a C++20 program that calculates the sum of the first N integers efficieitnyl using ranges. The value of N will be passed as a command-line argument to you program.
-
+Write a C++20 program that calculates the sum of the first N integers efficiently using ranges. The value of N will be passed as a command-line argument to you program.
 
 ## Requirements
 
@@ -21,6 +20,8 @@ $ ./sum_of_integers 10
 55
 $ ./sum_of_integers 3
 6
+$ ./sum_of_integers 100
+5050
 ```
 
 ## Notes
