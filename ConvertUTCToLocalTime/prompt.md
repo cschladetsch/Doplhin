@@ -4,7 +4,7 @@
 
 There is abundant confusion about how to deal with date-time stamps.
 
-The generated program allows for conversion of a datetime from Coordinated Universal Time (UTC) to its corresponding local time. The input can in either UTC FORMAT or in a human-readable format.
+The generated program allows for conversion of a datetime from Coordinated Universal Time (UTC) to its corresponding local time. The input can in either UTC Format or in a human-readable format.
 
 The output is always formal [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time).
 
@@ -44,4 +44,6 @@ $ ./convert_utc_to_local "March 7th, 2024 at 10:30AM EST"
 * Ensure the program is robust and can handle various edge cases.
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
 * Provide clear and informative error messages in case of any issues encountered during execution.
+* Given that no month starts with a number, it should be easy for the parser to determine if it is reading a UTC date-time stamp, or the more human readable form.
+* Allow for lack of data if given the "Human Readable" form. For instance, if the input is "March 10th 4pm", that should be sufficient to processand provide a good answer.
 
