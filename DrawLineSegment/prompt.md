@@ -2,20 +2,20 @@
 
 ## Problem Statement
 
-Generate a C++ program to render a line segment on a grid and write it to a file. The progri=am should provide a user-friend interface for specifying grid dimensions, line segement end end points, and output file name.
+Generate a C++ program to render a line segment on a grid and write it to a file. The program should provide a user-friend interface for specifying grid dimensions, line segment end end points, and output file name.
 
 
 ## Requirements
 
 1. **Line Segment Drawing Function**:
-1. **File Output**: Use C++20 features for code effieciency and readability. Do not use external libraries..
+1. **File Output**: Use C++20 features for code efficiency and readability. Do not use external libraries..
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
 
 ## Example Driver Code
 
-Genereate code for all comments that start with TODO:
+Generate code for all comments that start with TODO:
 
 ```cpp
 // TODO: add required include files. These must be standard C++20 files.
@@ -87,7 +87,7 @@ int main(int argc, char** argv) {
 
 ## Notes
 
-* Consider corner cases when generating the drawing algirithm, including zero-length lines, and ensure that horonizontal and vertical lines lines are treated specially.
+* Consider corner cases when generating the drawing algorithm, including zero-length lines, and ensure that horizontal and vertical lines lines are treated specially.
 * The solution must adhere to modern C++20 standards and must not use external libraries.
 * Ensure the program is robust and can handle various edge cases.
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
