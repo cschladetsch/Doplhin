@@ -11,8 +11,9 @@ In this case, only words are required. A word is a sequence of letters with no w
 1. **Input**: 
  * Read a list of words from standard input `stdin` and identify anagrams within the list.
  * Ignore all punctuation.
- * Input words are separate by whitespace (after all punctuation has been removed).
-1. **Output**: Display groups of anagrams found, as per [Sample Usage](#sameple-usage) section below. Specifically:
+ * Input words are separated by whitespace after all punctuation has been removed.
+1. **Output**: 
+ * Display groups of anagrams found, as per [Sample Usage](#sameple-usage) section below. Specifically:
  * Find all anagrams within a group of words.
  * Write a header named "Group N", where N monotonically increases for each new group, starting from 1.
  * Under each "Group N", list all anagrams on a different line, preceded by `- `.
@@ -24,6 +25,8 @@ In this case, only words are required. A word is a sequence of letters with no w
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
 
 ## Sample Usage
+
+The following shows a sample session in `bash` script.
 
 ```bash
 $ cat ./input.txt
@@ -49,4 +52,6 @@ Group 4
 * Ensure the program is robust and can handle various edge cases. 
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
 * Provide clear and informative error messages in case of any issues encountered during execution.
+* Show example usage that differs from that provided in this prompt.
+
 
