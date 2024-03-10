@@ -8,12 +8,19 @@ In this case, only words are required. A word is a sequence of letters with no w
 
 ## Requirements
 
-1. **Input**: Read a list of words from standard input `stdin` and identify anagrams within the list.
-1. **Output**: Display groups of anagrams found, as per [Sample Usage](#sameple-usage) section below.
+1. **Input**: 
+ * Read a list of words from standard input `stdin` and identify anagrams within the list.
+ * Ignore all punctuation.
+ * Input words are separate by whitespace (after all punctuation has been removed).
+1. **Output**: Display groups of anagrams found, as per [Sample Usage](#sameple-usage) section below. Specifically:
+ * Find all anagrams within a group of words.
+ * Write a header named "Group N", where N monotonically increases for each new group, starting from 1.
+ * Under each "Group N", list all anagrams on a different line, preceded by `- `.
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
  * Use `<string_view>` library to reduce memory copy overhead.
  * Use `<algorithm>` STL library as needed to reduce the amount of code generated.
+ * Use `<ranges>` library as needed.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
 
 ## Sample Usage
@@ -21,7 +28,7 @@ In this case, only words are required. A word is a sequence of letters with no w
 ```bash
 $ cat ./input.txt
 listen silent below elbow act cat desserts stressed
-$ !! | ./find_anagrams
+$ cat ./input.txt | ./find_anagrams
 Group 1
 - listen
 - silent
@@ -39,9 +46,7 @@ Group 4
 ## Notes
 
 * The solution must adhere to modern C++20 standards and must not use external libraries.
-* Ensure the program is robust and can handle various edge cases.
+* Ensure the program is robust and can handle various edge cases. 
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
 * Provide clear and informative error messages in case of any issues encountered during execution.
-
-
 
