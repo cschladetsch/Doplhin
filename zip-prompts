@@ -2,10 +2,6 @@
 
 # Script Name: zip_md_files.sh
 # Purpose: Zips Markdown (.md) files based on specified parameters.
-# Options:
-#   --all: Zip all .md files in the current directory and its subdirectories.
-#   --latest: Zip all .md files newer than the latest 'prompts*.zip' file.
-#   --help: Display script usage and parameter descriptions.
 
 zipname="prompts_$(date +%Y%m%d_%H%M%S).zip"
 
@@ -51,7 +47,8 @@ case "$1" in
         show_help
         ;;
     *)
-        echo "Invalid option: $1. Use --help for usage information."
+        echo "Invalid option: $1."
+		show_help
         exit 1
         ;;
 esac
