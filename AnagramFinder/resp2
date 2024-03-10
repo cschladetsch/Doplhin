@@ -1,0 +1,11 @@
+"
+- dear
+- read
+- door
+"
+
+Are not anagrams. This is not a problem with my SI as I explicitly stated "using all the original letters exactly once."
+
+However, there is still some ambiguity there. Even so, I feel that the bot should a) understand what an anagram is and b) deduce the correct answer.
+
+It should  be clear from the SI that "door" is NOT an anagram of "dear".

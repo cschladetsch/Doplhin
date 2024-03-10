@@ -1,0 +1,35 @@
+Does not include required <map> header.
+
+After adding that, and using the given "new" input, the results are:
+
+```
+
+```
+λ cat in1 | ./ConsoleApplication1.exe
+Group 1
+- car
+- arc
+Group 2
+- leap
+- pale
+Group 3
+- eat
+- tea
+```
+
+Which is almost correct.
+
+```
+Group 3
+- car
+- care
+- arc
+```
+
+Are not anagrams. This is not a problem with my SI as I explicitly stated "using all the original letters exactly once."
+
+However, there is still some ambiguity there. Even so, I feel that the bot should a) understand what an anagram is and b) deduce the correct answer.
+
+I can understand that "car" and "care" could be considered 'anagrams' from my definition. Maybe.
+
+But a) the bot should already know what an anagram is and b) my description of them was clear enough that "car" and "care" should not be considered anagrams.
