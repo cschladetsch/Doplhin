@@ -1,14 +1,14 @@
 # C++20 - Drawing an Ellipse to a File
 
 Generate a modern C++20 program to render an ellipse on a grid and save it to a file. 
+
 The program must provide a user-friendly interface for specifying grid dimensions, ellipse parameters, and the output file.
 
 ## Requirements
 
-1. **Ellipse Drawing Function**:
-1. **File Output**:
-1. **Centred Ellipse**:
-
+1. **Ellipse Drawing Function**: Implement a function to draw an ellipse ono a user-defined sized grid of characters.
+1. **File Output**: Write the ellipse representation, with the two-dimensional (2D) grid dimensions listed on the first line.
+1. **Centred Ellipse**: The ellipse will be centered within the grid for visual output.
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
@@ -64,6 +64,15 @@ int main(int argc, char **argv) {
 
   return 1;
 }
+```
+
+## Sample Call
+
+```bash
+$ ./draw_ellipse 50 50 20 10 out
+$ cat out
+50 50
+[ ...remainder of file contents...]
 ```
 
 ## Notes
