@@ -15,7 +15,7 @@ The program must provide a user-friendly interface for specifying grid dimension
 
 ## Example Driver Code
 
-All comments that start with TODO must be generated.
+All comments that start with TODO must be generated:
 
 ```cpp
 // TODO Include all required headers
