@@ -1,12 +1,14 @@
 # C++20 - File Archiver
 
-Generate a C++20 program to assist in managing files within given directories, through customisable file selection criteria, and destinations given via command line arguments.
+Generate a C++20 program to assist in managing files given via command line arguments.
 
 ## Requirements
 
 1. **Scanning Directories**: Use `<filesystem>` and related modern C++20 libraries.
 1. **Identification**:
- * Write a mechanism to find files based on user-defined criteria, especially name and age.
+ * Write a mechanism to find files based on user-defined criteria. Specicallically:
+ * size (--size) in kilobytes
+ * and age (--min-age) in days.
 1. **Command Line Interface**:
  * Enable user to specify the source and destination folders, as well as file selection criteria, via the command line.
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
