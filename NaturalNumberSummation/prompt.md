@@ -1,46 +1,27 @@
-# C++20 - [NAME]
+# Calculate Sum of Natural Numbers
 
-## Problem Statement
+Generate a C++20 program to solve a variation of Euler Problem 1. This finds the sum of all natural numbers below a given limit that are multiples of either 3 or 5.
 
 ## Requirements
 
-1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
-1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
-1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
+1. Generate the program using C++20.
+1. Accept input from the command line. 
+1. Calculate the sum of all natural numbers below the given limit that are multiples of either 3 or 5.
+1. Output the sum.
+1. Ensue the program handles input and internal errors gracefully.
+1. Optimise the algorithm for efficiency in space and time.
 
-## Provided Framework
-
-```cpp
-// include required samples
-```
-
-### Driver Code
-
-```cpp
-int main(int argc, char **argv) {
-    // code
-    return 0;
-}
-```
-
-## Sample Usage
+## Examples
 
 ```bash
-$ ./app args
-[output]
-```
-
-```bash
-$ ./app args2
-[output2]
+$ ./euler-sum 10
+23
+$ ./euler-sum 20
+78
 ```
 
 ## Notes
 
-* The solution must adhere to modern C++20 standards and must not use external libraries.
-* Ensure the program is robust and can handle various edge cases.
-* Prioritorise code readability, maintainability, and efficiency in the implementation.
-* Provide clear and informative error messages in case of any issues encountered during execution.
-
-
+1. Natural numbers start at one and monotonically increase.
+1. The program should include the numbers that are multiples of both 3 and 5 only once in the sum.
 
