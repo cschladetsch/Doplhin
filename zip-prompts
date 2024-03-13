@@ -31,8 +31,8 @@ show_help() {
 # Main logic to process input parameter
 case "$1" in
     --all)
-        echo "Zipping all .md files."
         find . -type f -name "*.md" -print0 | xargs -0 zip "$zipname"
+        echo "Zipping all .md files to $zipname"
         ;;
     --latest)
         latest_zip_date=$(get_latest_zip_date)
