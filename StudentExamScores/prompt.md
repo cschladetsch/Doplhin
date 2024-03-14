@@ -1,9 +1,8 @@
 # C++20 - Student Results Analysis
 
-Generate code that creates statistics for a group of students based on their exam scores.
+Generate code that creates statistics for a group of students based on their exam scores. Use modern C++20 code.
 
 Each student is represented by a `struct` containing their name and a `std::vector<int>` of their exam scores.
-
 
 ## Requirements
 
@@ -23,8 +22,11 @@ Each student is represented by a `struct` containing their name and a `std::vect
 
 ## Provided Framework
 
+Comments that start with 'TODO' should be replaced by effective code that solves the problem, given the information following the 'TODO' text.
+
 ```cpp
-// include required samples
+
+// TODO: include required samples
 
 using namespace std;
 
@@ -37,6 +39,9 @@ struct Student {
 
 int main() {
   vector<Student> students = {
+    {"Alice", {80,85,90}},
+    {"Bob", {75,70,65}},
+    {"Charlie", {90,95,85}}
   };
 
   writeStatistics(students);
