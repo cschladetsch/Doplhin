@@ -1,9 +1,22 @@
-# C++20 - [NAME]
+# C++20 - Student Results Analysis
 
-## Problem Statement
+Generate code that creates statistics for a group of students based on their exam scores.
+
+Each student is represented by a `struct` containing their name and a `std::vector<int>` of their exam scores.
+
 
 ## Requirements
 
+1. Define a `Student` struct containing the following fields:
+ * `string name`: The full name of the Student.
+ * `vector<int> scores`: A vector containing the exam scores for that student.
+1. Implement a function named `writeStatistics` that takes a vector of Students as input and writes the following information to `stdout`:
+ * Name of each Student.
+ * Average score for that student.
+ * Highest score for that student.
+ * Lowest score for that student.
+ * Student(s) with the highest average score.
+ * Student(s) with the lowest average score.
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
@@ -12,27 +25,47 @@
 
 ```cpp
 // include required samples
-```
 
-### Driver Code
+using namespace std;
 
-```cpp
-int main(int argc, char **argv) {
-    // code
-    return 0;
+struct Student {
+  string name;
+  vector<int> scores;
+};
+
+// TODO: generate code for the writeStatistics function
+
+int main() {
+  vector<Student> students = {
+  };
+
+  writeStatistics(students);
+
+  return 0;
 }
 ```
 
-## Sample Usage
+### Output
 
-```bash
-$ ./app args
-[output]
 ```
+Student: Alice
+Average Score: 85
+Highest Score: 90
+Lowest Score: 80
 
-```bash
-$ ./app args2
-[output2]
+Student Bob:
+Average Score: 70
+Highest Score: 75
+Lowest Score: 65
+
+Student Charlie:
+Average Score: 90
+Highest Score: 95
+Lowest Score: 85
+
+Overall Average Score: 81.67
+Student(s) with Highest Average Score: Charlie
+Student(s) with Lowest Average Score: Bob
 ```
 
 ## Notes
@@ -41,6 +74,5 @@ $ ./app args2
 * Ensure the program is robust and can handle various edge cases.
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
 * Provide clear and informative error messages in case of any issues encountered during execution.
-
 
 
