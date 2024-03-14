@@ -2,7 +2,7 @@
 
 Generate code that creates statistics for a group of students based on their exam scores. Use modern C++20 code.
 
-Each student is represented by a structure containing their name and a history of their examination (exam) scores.
+Each student is represented by a `struct` containing their name and a `std::vector<int>` of their exam scores.
 
 ## Requirements
 
@@ -14,8 +14,6 @@ Each student is represented by a structure containing their name and a history o
  * Average score for that student.
  * Highest score for that student.
  * Lowest score for that student.
-1. Followed by:
- * Overall average score of all students for all exams.
  * Student(s) with the highest average score.
  * Student(s) with the lowest average score.
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
@@ -28,7 +26,7 @@ Comments that start with 'TODO' should be replaced by effective code that solves
 
 ```cpp
 
-// TODO: include required headers
+// TODO: include required samples
 
 using namespace std;
 
@@ -52,7 +50,9 @@ int main() {
 }
 ```
 
-### Output
+### Typical Output
+
+The following is representative of expected output:
 
 ```
 Student: Alice
