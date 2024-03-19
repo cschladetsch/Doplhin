@@ -1,9 +1,16 @@
-# C++20 - [NAME]
+# Concurrent Hashmap
 
-## Problem Statement
+Generate a thread-safe hash-map using modern C++20.
+
+Must allow multiple threads to read and write key-calue pairs concurrently while maintaining thread safety and optimal performance.
 
 ## Requirements
 
+1. **Implementation**: 
+ * Generate and document a concurrent has map data structure that supports:
+  * Insert
+  * Delete
+  * Lookup
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
