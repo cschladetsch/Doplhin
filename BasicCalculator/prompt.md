@@ -6,10 +6,10 @@ Generate a basic calculator using modern C++20. Take an expression from the comm
 
 1. **Operations**: Support addition (+), subtraction (-), multiplication (\*) and division (/).
 1. **Data Types**: Support doubles. Output all results with 5 significant digits.
-1. **CommandLine Arguments**: Take one argument, as a mathematical expression using numbers and supported operations, surrounded by double quotes (").
-1. **Parsing**:
+1. **Command Line Arguments**: Take one argument, as a mathematical expression using numbers and supported operations, surrounded by double quotes (").
+1. **Parsing**: Accept mathematical expressions as command-line arguments.
 1. **Order of Evaluation**: Follow standard mathematical rules for evaluation order (PEMDAS):
- * Paranthesised expressions.
+ * Parenthesised expressions.
  * Multiplication and Division.
  * Addition and Subtraction.
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
@@ -17,16 +17,20 @@ Generate a basic calculator using modern C++20. Take an expression from the comm
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
  * Trap division by zero and report it.
  * Trap invalid input expressions.
- 
+1. Only support positive numbers in input expression.
+
 ## Structure
 
-* Parse command-line arguments to extract the expression.
+* Parse command-line arguments to extract the expression. 
 * Evaluate the expression using the parser while respecting the order of operations.
+ * Consider the use of a Stack and/or Abstract Syntax Tree (AST). 
 * Display the result to standard output stream, and/or and error message written to standard error stream.
 
 ## Examples
 
 ```bash
+$ ./calc "3.14"
+3.1400
 $ ./calc "1 + 3*4"
 13.000
 $ ./calc "(1 + 3)*4"
@@ -43,7 +47,7 @@ Error: Division by zero
 
 ## Notes
 
-* Ensure parantheses are balanced in the input expression.
+* Ensure parentheses are balanced in the input expression.
 * Only support the required operations of addition, subtraction, multiplication and division.
 * Division by zero will result in an error message written to `stderr` stream.
 * The solution must adhere to modern C++20 standards and must not use external libraries.
