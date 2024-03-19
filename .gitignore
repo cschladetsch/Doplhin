@@ -4,6 +4,7 @@ Debug/
 Console*/
 .vs/
 
+/tmp
 
 *.exe
 *.o
