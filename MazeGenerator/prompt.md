@@ -46,9 +46,9 @@ Generate a program using modern C++20 that generates mazes of various sizes.
 ```bash
 $ ./maze_generator 5 5 
 S####
-   ##
- #  #
- #  E
+...##
+ #.##
+ #..E
 ```
 ## Notes
 
