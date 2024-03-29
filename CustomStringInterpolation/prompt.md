@@ -26,22 +26,21 @@ int main() {
     int age { 40 };
     double height { 1.75 };
 
-    auto result = interpolate("Hello, [0]! You are [1] years old and are [2] meters tall");
+    auto result = interpolate("Hello, [0]! You are [2] meters tall and [1] years old");
     std::cout << result;
 
-    // Result: "Hello, Alice! You are 40 years old and are 1.75 meters tall"
+    // Result: "Hello, Alice! You are 1.75 meters tall and 40 years old"
     return 0;
 }
 ```
 
 ## Notes
 
+* Assume the format string only uses square brackets `[]` for placeholders.
 * Consider using parameter packs to pass arguments to `interpolate` function.
 * Use `std::to_string` or `std::ostringstream` for converting arguments to their string representations.
 * The solution must adhere to modern C++20 standards and must not use external libraries.
 * Ensure the program is robust and can handle various edge cases.
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
 * Provide clear and informative error messages in case of any issues encountered during execution.
-
-
 
