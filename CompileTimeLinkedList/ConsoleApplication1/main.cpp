@@ -23,7 +23,7 @@ constexpr auto make_immutable_linked_list(Sequence<Types...>) {
         return nullptr;
     }
 
-    return new LinkedList<typename Types::type, decltype(make_immutable_linked_list(Sequence<Types...>{})) > {};
+    return new LinkedList<typename Types::value_type, decltype(make_immutable_linked_list<Sequence<Types...>{})>{};
 };
 
 template <typename List>
@@ -41,5 +41,8 @@ constexpr auto list_sum(const List& list) {
 }
 
 int main() {
+    constexpr auto list = make_immutable_linked_list(
+        Sequence<std::integral_constant<int, 1>, std::integral_constant<int, 2>>{});
+
     return 0;
 }
