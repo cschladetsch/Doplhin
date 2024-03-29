@@ -1,15 +1,9 @@
-#include <exception>
 #include <iostream>
-#include <ranges>
 #include <regex>
+#include <sstream>
 #include <string>
 #include <string_view>
-
-// Concept to ensure that an argument can be converted to a string representation.
-template <typename T>
-concept ToStringable = requires(T value) {
-    { std::to_string(value) } -> std::convertible_to<std::string>;
-};
+#include <stdexcept>
 
 // Custom string interpolation function.
 template <typename... Args>
@@ -18,42 +12,38 @@ std::string interpolate(std::string_view format_string, Args... args) {
     const std::regex placeholder_regex{ R"(\[(\d+)\])" };
 
     // Function to replace placeholders with formatted arguments.
-    const auto replace_placeholder = [&args](const auto& match) -> std::string {
-        const int index = std::stoi(match[1].str());
+    std::string result;
+    auto format_begin = format_string.begin();
+    auto format_end = format_string.end();
+    std::regex_iterator<std::string_view::iterator> iter{ format_begin, format_end, placeholder_regex };
+    std::regex_iterator<std::string_view::iterator> end;
 
-        // Check if the placeholder index is within bounds.
-        if (index < 0 || index >= sizeof...(args)) {
+    size_t last_pos = 0;
+    for (; iter != end; ++iter) {
+        // Append the text before the match
+        result.append(format_begin + last_pos, format_begin + iter->position());
+
+        // Get the index from the match
+        size_t index = std::stoi((*iter)[1]);
+
+        // Check if the index is valid
+        if (index >= sizeof...(args)) {
             throw std::out_of_range("Placeholder index out of range in interpolate()");
         }
 
-        // Get the argument corresponding to the placeholder index.
-        const auto& arg = std::get<index>(std::tie(args...));
+        // Append the corresponding argument
+        std::stringstream ss;
+        ((void)(ss << std::get<index>(std::tuple<Args...>{args...})), result.append(ss.str()));
 
-        // Convert the argument to a string and return it.
-        return std::to_string(arg);
-        };
+        // Update last position
+        last_pos = iter->position() + iter->length();
+    }
 
-    // Use ranges to process the format string and replace placeholders.
-    std::string result;
-    std::ranges::transform(
-        std::ranges::subrange(std::sregex_iterator(format_string.begin(), format_string.end(), placeholder_regex),
-            std::sregex_iterator()),
-        std::back_inserter(result),
-        replace_placeholder);
+    // Append the remaining text
+    result.append(format_begin + last_pos, format_end);
 
     return result;
 }
-
-// Exception class for interpolation errors.
-class InterpolationError : public std::exception {
-private:
-    std::string message_;
-
-public:
-    InterpolationError(const std::string& message) : message_(message) {}
-
-    const char* what() const noexcept override { return message_.c_str(); }
-};
 
 int main() {
     try {
