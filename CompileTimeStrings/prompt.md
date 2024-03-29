@@ -8,8 +8,8 @@ Generate a comprehensive compile-time string manipulation library using C++20.
 1. **Type Safety**: Incorporate C++20 concepts to enforce type safety and provide meaningful error messages when invalid types are used.
 1. **Compile-Time Operations**: Ensure all string manipulation functions are implemented using `consteval` functions and `constexpr` expressions to guarantee correct compile-time evaluation.
 1. **Operations**: Provide the following string manipulation functionality:
- * String concatenation: `concat`.
- * String trimming (from front and back): `trim_front(const char *trimCharacters)`, `trim_back(const char *trimCharacters)`
+ * String concatenation: `concat`. Takes a variable number of arguments.
+ * String whitespace trimming (from front and back): `trim_front`, `trim_back`
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
@@ -17,14 +17,16 @@ Generate a comprehensive compile-time string manipulation library using C++20.
 ## Examples
 
 ```cpp
-
 // concatenation
-constexpr auto hello = concat("Hello", ", ", "World"); // "Hello, World"
+constexpr auto hello = concat("Hello", ", ", "World");
+static_assert(strings_equal(hello, "Hello, World");
 
 // trimming
-constexpr auto hello = trim_front("   Hello"); // "Hello"
-constexpr auto hello = trim_back("World    "); // "World"
+constexpr auto hello = trim_front("   Hello");
+static_assert(strings_equal(hello, "Hello");
 
+constexpr auto hello = trim_back("World    ");
+static_assert(strings_equal(hello, "World");
 ```
 
 ## Notes
