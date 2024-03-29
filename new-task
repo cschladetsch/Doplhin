@@ -5,7 +5,5 @@ mkdir $folder && cd $folder
 cp ../PromptTemplate.md prompt.md
 git add prompt.md && git commit -m "Created $1."
 
-cd $folder
-vi prompt.md
-
+echo ***** Now change to the $folder folder *****
 
