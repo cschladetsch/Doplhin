@@ -4,6 +4,7 @@
 
 ## Requirements
 
+1. **Name**: Description.
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
