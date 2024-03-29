@@ -5,7 +5,7 @@
 
 // Helper function to ensure type compatibility and conversion between different string representations
 template <typename T>
-auto to_string(T&& str) {
+consteval auto to_string(T&& str) {
     if constexpr (std::is_same_v<T, std::string>) {
         return str;
     } else if constexpr (std::is_same_v<T, std::string_view>) {
@@ -36,12 +36,14 @@ consteval auto trim_back(std::string_view str) {
     return str;
 }
 
-// Helper function for compile-time string equality comparison
-template <typename T1, typename T2>
-consteval auto strings_equal(T1&& str1, T2&& str2) {
-    return to_string(str1) == to_string(str2);
+//// Helper function for compile-time string equality comparison
+//template <typename T1, typename T2>
+//consteval auto strings_equal(T1&& str1, T2&& str2) {
+//    return to_string(str1) == to_string(str2);
+//}
+constexpr bool strings_equal(char const * a, char const * b) {
+    return std::string_view(a)==b;
 }
-
 // Example usage:
 
 int main() {
@@ -55,7 +57,7 @@ int main() {
         //static_assert(strings_equal(hello, "Hello"), "Front trimming failed");
 
         constexpr auto hello2 = trim_back("World    ");
-        //static_assert(strings_equal(hello, "World"), "Back trimming failed");
+        static_assert(strings_equal(hello2, "World"), "Back trimming failed");
 
     } catch (const std::exception& e) {
         // Handle error and provide context

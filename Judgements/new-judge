@@ -1,0 +1,10 @@
+#!/bin/sh
+
+folder=$1
+mkdir $folder && cd $folder
+cp ../ReadmeTemplate.md Readme.md
+git add Readme.md && git commit -m "Created $1."
+
+echo **** now cd to $folder ***
+
+

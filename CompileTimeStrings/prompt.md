@@ -31,6 +31,7 @@ static_assert(strings_equal(hello, "World");
 
 ## Notes
 
+* std::strings\_equal is in <string_view> header.
 * The solution must adhere to modern C++20 standards and must not use external libraries.
 * Ensure the program is robust and can handle various edge cases.
 * Prioritorise code readability, maintainability, and efficiency in the implementation.
