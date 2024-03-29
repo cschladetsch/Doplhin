@@ -1,39 +1,30 @@
-# C++20 - [NAME]
+# Compile Time Strings
 
-## Problem Statement
+Generate a comprehensive compile-time string manipulation library using C++20.
 
 ## Requirements
 
-1. **Name**: Description.
+1. **Compatibility**: Support different string representations (e.g. `std::string`, `std::string_view`, C-style strings) and ensure compatibility between them. 
+1. **Type Safety**: Incorporate C++20 concepts to enforce type safety and provide meaningful error messages when invalid types are used.
+1. **Compile-Time Operations**: Ensure all string manipulation functions are implemented using `consteval` functions and `constexpr` expressions to guarantee correct compile-time evaluation.
+1. **Operations**: Provide the following string manipulation functionality:
+ * String concatenation: `concat`.
+ * String trimming (from front and back): `trim_front(const char *trimCharacters)`, `trim_back(const char *trimCharacters)`
 1. **Comments**: Add comments to the code, focusing on "why" and not "how" or "what".
 1. **C++20**: Use only standard C++20 features and libraries. Do not use external libraries.
 1. **Error Handling**: Use exceptions to deal with errors. When errors are caught, add local contextual extra information then rethrow the exception.
 
-## Provided Framework
-
-```cpp
-// include required samples
-```
-
-### Driver Code
-
-```cpp
-int main(int argc, char **argv) {
-    // code
-    return 0;
-}
-```
-
 ## Examples
 
-```bash
-$ ./app args
-[output]
-```
+```cpp
 
-```bash
-$ ./app args2
-[output2]
+// concatenation
+constexpr auto hello = concat("Hello", ", ", "World"); // "Hello, World"
+
+// trimming
+constexpr auto hello = trim_front("   Hello"); // "Hello"
+constexpr auto hello = trim_back("World    "); // "World"
+
 ```
 
 ## Notes
